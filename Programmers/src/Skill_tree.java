@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Iterator;
 
 public class Skill_tree {
 
@@ -18,8 +19,8 @@ public class Skill_tree {
 
 	}
 	public static int solution(String skill, String[] skill_trees) {
-        int answer = 0;
-        
+		int answer = 0;
+		
         ArrayList<Integer> list = new ArrayList<>();
         ArrayList<Integer> list2 = new ArrayList<>();
         A:
@@ -27,14 +28,18 @@ public class Skill_tree {
         	int count = 0;
         	for(int j = 0; j < skill.length(); j++) {
         		char skillSet = skill.charAt(j);
-        		if(count != j) continue A;
+        		if(count != j) {
+        			list.clear();
+        			list2.clear();
+        			continue A;
+        		}
         		if(i.indexOf(skillSet) != -1) {
         			list.add(i.indexOf(skillSet));
         			list2.add(i.indexOf(skillSet));
         			count++;
         		}
         	}
-        	Collections.sort(list);
+            Collections.sort(list);
         	if(Arrays.equals(list.toArray(), list2.toArray())) {
         		answer++;
         	}
@@ -43,4 +48,72 @@ public class Skill_tree {
         }
         return answer;
     }
+	
+	public int solution2(String skill, String[] skill_trees) {
+        int answer = 0;
+        ArrayList<String> skillTrees = new ArrayList<String>(Arrays.asList(skill_trees));
+        //ArrayList<String> skillTrees = new ArrayList<String>();
+        Iterator<String> it = skillTrees.iterator();
+
+        while (it.hasNext()) {
+            if (skill.indexOf(it.next().replaceAll("[^" + skill + "]", "")) != 0) {
+                it.remove();
+            }
+        }
+        answer = skillTrees.size();
+        return answer;
+    }
+	
+	public int solution3(String skill, String[] skill_trees) {
+		int answer = 0;
+
+		int index = 0;
+		while(true) {
+			String skill_tree = skill_trees[index];
+			String skill_clone = new String(skill_tree);
+			int size = skill_tree.length();
+			for (int i =0; i < size; i++) {
+				String oneSkill = String.valueOf(skill_clone.charAt(i));
+				if (!skill.contains(oneSkill)) {
+					skill_tree = skill_tree.replace(oneSkill, "");
+				}
+			}
+			if (skill.indexOf(skill_tree) == 0) {
+				answer++;
+			}
+			index++;
+			if(index == skill_trees.length) break;
+		}
+		
+		return answer;
+		}
+	public int solution4(String skill, String[] skill_trees) {
+	    int answer = 0;
+	    int treeLength = skill_trees.length;
+	    for(int i=0; i<treeLength; i++){
+	        int skillIndex=0;
+	        boolean flag = true;
+
+	        int treeIdxLength = skill_trees[i].length();
+	        for(int j=0; j<treeIdxLength; j++){
+
+	            int skillLength = skill.length();
+	            for(int k=skillIndex; k<skillLength; k++){
+	                if(skill.charAt(k) == skill_trees[i].charAt(j)){
+	                    if(k!=skillIndex){
+	                        flag = false;
+	                    }else{
+	                        skillIndex++;
+	                    }
+
+	                }
+	            }
+	        }
+
+	        if(flag == true){
+	            answer ++;
+	        }
+	    }
+	        return answer;
+	    }
 }
