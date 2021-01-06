@@ -9,7 +9,6 @@ public class MathGiveUp {
 		int[] answers2 = {1,3,2,4,2};
 		int[] result2 = {1,2,3};
 		
-		int[] a = {1};
 		//System.out.println(Arrays.equals(a, result1));
 		
 		if(Arrays.equals(solution(answers1), result1)) {
