@@ -135,6 +135,7 @@ public class MathGiveUp {
         for(int num : list)
             answer[cnt++] = num;
         return answer;
+        
     }
 }
 
