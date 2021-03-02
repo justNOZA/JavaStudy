@@ -17,4 +17,12 @@ public class SumbetweenTwoInt {
         }
         return answer;
     }
+	
+	public static long solution2(int a, int b) {
+        return sumAtoB(Math.min(a, b), Math.max(b, a));
+    }
+
+    private static long sumAtoB(long a, long b) {
+        return (b - a + 1) * (a + b) / 2;
+    }
 }
