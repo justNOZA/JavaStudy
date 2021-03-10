@@ -27,7 +27,7 @@ public class IdentityNum {
 	    if ( checkReg == reg ){
 	        ok = true; // 체크한 값과 주민번호 마지막 값이 맞다면 true 반환
 	    }
-
+//global email?? 
 	    return ok;
 	}
 }
