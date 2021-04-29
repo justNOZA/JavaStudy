@@ -6,9 +6,10 @@ public class Question18 {
 	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		solution1();
+//		solution1();
 		solution2();
-		solution3();
+//		solution3();
+		star();
 	}
 
 	private static void solution3() {
@@ -31,6 +32,34 @@ public class Question18 {
 			}
 //			for(int j = 1; j < )
 			System.out.println();
+		}
+	}
+	
+	private static void star() {
+		int num = sc.nextInt();
+		for (int i=0;i<num;i++){
+		  for (int j=0; j<num;j++)
+		  {
+		     if (i<=num/2)// À§ÂÊ ¿µ¿ª
+		     {
+		        if (i+j<=num/2-1)// ¿ÞÂÊ À§ °ø¹éÂï±â
+		           System.out.print(" ");
+		        else if (j-i>=num/2+1) // ¿À¸¥ÂÊ À§ °ø¹éÂï±â
+		        	System.out.print(" ");
+		        else
+		           System.out.print("*");// *Âï±â
+		     }
+		     else if (i>num/2) //¾Æ·¡ÂÊ ¿µ¿ª
+		     {
+		        if (i-j>=num/2+1) //¿ÞÂÊ ¹Ø °ø¹é
+		        	System.out.print(" ");
+		        else if (i+j>=num/2*3+1)//¿À¸¥ÂÊ ¹Ø °ø¹é
+		        	System.out.print(" ");
+		        else
+		        	System.out.print("*"); // *Âï±â
+		     }
+		  }
+		  System.out.println();//ÁÙ¹Ù²Þ
 		}
 	}
 
