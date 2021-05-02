@@ -9,7 +9,7 @@ public class Question18 {
 		solution1(); // number
 		solution2(); // blank Dia
 		solution3(); // square
-		star();
+//		star();
 	}
 
 	private static void solution3() {
