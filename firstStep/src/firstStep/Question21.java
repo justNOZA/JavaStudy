@@ -19,6 +19,7 @@ public class Question21 {
 	private static void compute(String item, int qty, int price) {
 		// TODO Auto-generated method stub
 		int result = qty * price;
+		
 		System.out.println("-출력-");
 		System.out.printf("품명 : %s\n",item);
 		System.out.printf("금약 : %d원",result);
