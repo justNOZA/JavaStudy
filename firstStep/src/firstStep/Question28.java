@@ -8,3 +8,17 @@ public class Question28 {
 	}
 
 }
+
+class Test28{
+	double base = 5.0;
+	double height = 3.5;
+	public double getArea() {
+		return 0;
+	}
+	public double getHypotenuse() {
+		return 0;
+	}
+	public double getPerimeter() {
+		return 0;
+	}
+}
