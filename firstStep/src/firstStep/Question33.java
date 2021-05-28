@@ -6,7 +6,13 @@ public class Question33 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		T33 ob = new T33();
+		while(true) {
+			int result = ob.menu();
+			if(result == 4 ) {
+				return;
+			}
+		}
 	}
 
 }
@@ -39,10 +45,28 @@ class T33{
 		int num = sc.nextInt();
 		switch(num) {
 		case 1 :
-			break;
-		case 2 :
+			System.out.println("**** ªÔ∞¢«¸¿« ≥–¿Ã ****");
+			System.out.print("πÿ∫Ø :");
+			int a = sc.nextInt(); 
+			System.out.print("\n≥Ù¿Ã :");
+			int b = sc.nextInt(); 
+			System.out.printf("\n≥–¿Ã : %.2f",this.triangle(a, b));
 			break;
 		case 3 :
+			System.out.println("**** ªÁ¥Ÿ∏Æ≤√¿« ≥–¿Ã ****");
+			System.out.print("æ∆∑ß∫Ø :");
+			int c = sc.nextInt(); 
+			System.out.print("\n¿≠∫Ø :");
+			int d = sc.nextInt(); 
+			System.out.print("\n≥Ù¿Ã :");
+			int e = sc.nextInt(); 
+			System.out.printf("\n≥–¿Ã : %.2f",this.trapezoid(c, d, e));
+			break;
+		case 2 :
+			System.out.println("**** ø¯¿« ≥–¿Ã ****");
+			System.out.print("π›¡ˆ∏ß :");
+			int f = sc.nextInt(); 
+			System.out.printf("\n≥–¿Ã : %.2f",this.circle(f));
 			break;
 		case 4 :
 			System.out.println("∞®ªÁ«’¥œ¥Ÿ.");
