@@ -7,6 +7,7 @@ public class Question34 {
 		Test34 ob = new Test34("야철대장", 85000000, "철가방");
 		ob.getInformation();
 		ob.getInformationV2();
+		// iOS _ Strudy2 git commiut   해었음
 	}
 
 }
