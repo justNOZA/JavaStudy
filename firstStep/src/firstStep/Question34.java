@@ -1,15 +1,12 @@
 package firstStep;
 
 public class Question34 {
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Test34 ob = new Test34("æﬂ√∂¥Î¿Â", 85000000, "√∂∞°πÊ");
 		ob.getInformation();
 		ob.getInformationV2();
-		
 	}
-
 }
 
 class Salary {
