@@ -33,7 +33,6 @@ class Test34 extends Salary {
 		this.name = name;
 		this.salary = salary;
 		this.department = department;
-		
 	}
 	
 	public void getInformationV2() {
